@@ -1,24 +1,44 @@
-# README
+== Welcome to Time Master
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Team Members:
+Zoe Ma, UNI: rm4069
+Lanyue Zhang, UNI: lz2933
+Jiacheng Zhang, UNI: jz3658
+Quan Fang, UNI: qf2172
 
-Things you may want to cover:
+== Description of Contents
 
-* Ruby version
+The directory structure of our time master application:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  |-- app
+  |   |-- assets
+  |   |-- controllers
+  |   |-- helpers
+  |   |-- mailers
+  |   |-- models
+  |   |-- views
+  |   |-- ...
+  |-- bin
+  |-- config
+  |   |-- environments
+  |   |-- initializers
+  |   |-- locales
+  |   |-- ...
+  |-- coverage
+  |-- db
+  |-- features
+  |-- lib
+  |-- log
+  |-- node_modules
+  |-- public
+  |-- script
+  |-- spec
+  |-- storage
+  |-- test
+  |-- tmp
+  |-- vendor
+== Instructions to run and test:
+  1. Run Cucumber and Rspec to test(Use commands: "rake cucumber" & "rake spec")
+  2. Use "rails server -b 0.0.0.0" to run the server
+  3. Heroku deployment link: https://murmuring-ocean-35352-d3a360880aa0.herokuapp.com/tasks
+  4. Github link: https://github.com/JZ2001/COMS4152_TimeMaster
