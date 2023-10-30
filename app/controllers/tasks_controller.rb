@@ -14,8 +14,8 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     if @task.save
       redirect_to tasks_path, notice: 'Task was successfully created.'
-    else
-      render :new
+    # else
+    #   render :new
     end
   end
 
@@ -35,8 +35,8 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.update(task_params)
       redirect_to tasks_path, notice: 'Task was successfully updated.'
-    else
-      render :edit
+    # else
+    #   render :edit
     end
   end
 
@@ -47,11 +47,11 @@ class TasksController < ApplicationController
     redirect_to tasks_path, notice: 'Task was successfully deleted.'
   end
   # Delete a task
-  def destroy
-    @task = Task.find(params[:id])
-    @task.destroy
-    redirect_to tasks_path, notice: 'Task was successfully deleted.'
-  end    
+  # def destroy
+  #   @task = Task.find(params[:id])
+  #   @task.destroy
+  #   redirect_to tasks_path, notice: 'Task was successfully deleted.'
+  # end    
 
   private
   # Define strong parameters for the Task model

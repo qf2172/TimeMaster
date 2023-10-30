@@ -95,13 +95,13 @@ RSpec.describe TasksController, type: :controller do
     it "destroys the requested task" do
       task = Task.create! valid_attributes
       expect {
-        delete :destroy, params: { id: task.to_param }
+        delete :manual_delete, params: { id: task.to_param }
       }.to change(Task, :count).by(-1)
     end
 
     it "redirects to the tasks list" do
       task = Task.create! valid_attributes
-      delete :destroy, params: { id: task.to_param }
+      delete :manual_delete, params: { id: task.to_param }
       expect(response).to redirect_to(tasks_path)
     end
   end

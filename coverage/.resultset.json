@@ -26,7 +26,7 @@
           3,
           2,
           null,
-          1,
+          null,
           null,
           null,
           null,
@@ -47,15 +47,21 @@
           3,
           2,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
-          null,
-          null,
-          null,
-          null,
-          1,
           2,
           2,
           2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
@@ -89,13 +95,16 @@
         ]
       }
     },
-    "timestamp": 1698632402
+    "timestamp": 1698634730
   },
   "Cucumber Features": {
     "coverage": {
       "/home/codio/workspace/app/app/models/task.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -131,7 +140,6 @@
           null,
           null,
           null,
-          null,
           1,
           1,
           null,
@@ -156,6 +164,12 @@
           1,
           1,
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
@@ -177,51 +191,8 @@
           1,
           null
         ]
-      },
-      "/home/codio/workspace/app/app/channels/application_cable/connection.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/app/app/channels/application_cable/channel.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/app/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/app/app/mailers/application_mailer.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1698626641
+    "timestamp": 1698634694
   }
 }
