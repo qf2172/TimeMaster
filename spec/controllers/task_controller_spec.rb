@@ -40,7 +40,7 @@ RSpec.describe TasksController, type: :controller do
     end
   end
 
-  describe "Be able to create task with valid params" do
+  describe "is able to create task" do
     context "with valid params" do
       it "creates a new Task" do
         expect {
@@ -62,7 +62,7 @@ RSpec.describe TasksController, type: :controller do
     end
   end
 
-  describe "able to update an existing task" do
+  describe "is able to update an existing task" do
     context "with valid params" do
       let(:new_attributes) {
         { name: 'Task 2', description: 'Task 2 description', due_date: Date.tomorrow }

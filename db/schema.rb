@@ -10,10 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20231030000635) do
-    create_table "tasks", force: :cascade do |t|
-        t.string "name"
-        # t.text "description"
-        t.date "due_date"
-    end
+ActiveRecord::Schema.define(version: 2023_10_30_001810) do
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.date "due_date"
+    t.string "description"
+  end
+
 end
