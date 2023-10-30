@@ -1,10 +1,5 @@
-class CreateTasks < ActiveRecord::Migration[6.0]
+class AddDueDateToTasks < ActiveRecord::Migration[6.0]
     def change
-      create_table :tasks do |t|
-        t.string "name"
-        t.text "description"
-        t.date "due_date"
-        t.timestamps
-      end
+      add_column :tasks, :due_date, :date
     end
-  end
+end

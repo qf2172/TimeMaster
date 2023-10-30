@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_30_002039) do
-
-  create_table "tasks", force: :cascade do |t|
-    t.string "name"
-    t.string "priority"
-    t.string "complexity"
-    t.datetime "deadline"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "description"
-    t.date "due_date"
-  end
-
+ActiveRecord::Schema.define(version: 20231030000635) do
+    create_table "tasks", force: :cascade do |t|
+        t.string "name"
+        t.text "description"
+        t.date "due_date"
+    end
 end
