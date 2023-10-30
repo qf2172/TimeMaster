@@ -1,10 +1,10 @@
 # == Welcome to Time Master
 
-Team Members:
-Zoe Ma, UNI: rm4069
-Lanyue Zhang, UNI: lz2933
-Jiacheng Zhang, UNI: jz3658
-Quan Fang, UNI: qf2172
+## Team Members:
+* Zoe Ma, UNI: rm4069
+* Lanyue Zhang, UNI: lz2933
+* Jiacheng Zhang, UNI: jz3658
+* Quan Fang, UNI: qf2172
 
 # == Description of Contents
 
