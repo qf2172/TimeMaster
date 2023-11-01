@@ -38,10 +38,12 @@ The directory structure of our time master application:
   * tmp
   * vendor
 # == Instructions to run and test:
-  1. Run Cucumber and Rspec to test(Use commands: "rake cucumber" & "rake spec")
-
-  2. Use "rails server -b 0.0.0.0" to run the server
-
-  3. Heroku deployment link: https://murmuring-ocean-35352-d3a360880aa0.herokuapp.com/tasks
+  1. Ruby Version Requirement: 2.6.6
   
-  4. Github link: https://github.com/JZ2001/COMS4152_TimeMaster
+  2. Run Cucumber and Rspec to test(Use commands: "rake cucumber" & "rake spec")
+
+  3. Use "rails server -b 0.0.0.0" to run the server
+
+  4. Heroku deployment link: https://murmuring-ocean-35352-d3a360880aa0.herokuapp.com/tasks
+  
+  5. Github link: https://github.com/JZ2001/COMS4152_TimeMaster
