@@ -28,6 +28,16 @@
     <%= f.date_field :due_date %>
   </div>
 
+  <div class="field">
+    <%= f.label :difficulty, "Priority" %><br>
+    <%= f.select :difficulty, Task.difficulties.keys.map { |difficulty| [difficulty.humanize, difficulty] }, {}, { class: 'select-class' } %>  </div>
+
+  <div class="field">
+    <%= f.label :estimate, "Estimate time range(in hours)" %><br>
+    <%= f.text_field :estimate %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

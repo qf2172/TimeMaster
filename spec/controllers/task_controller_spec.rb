@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe TasksController, type: :controller do
   let(:valid_attributes) {
-    { name: 'Task 1', description: 'Task 1 description', due_date: Date.today }
+    { name: 'Task 1', description: 'Task 1 description', due_date: Date.today, difficulty: 'low', estimate: 10}
   }
 
   let(:invalid_attributes) {
-    { name: '', description: '', due_date: nil }
+    { name: '', description: '', due_date: nil, difficulty: 'low', estimate: 0}
   }
 
   describe "Get response from sucessfuly created task" do
@@ -55,10 +55,10 @@ RSpec.describe TasksController, type: :controller do
     end
 
     context "with invalid params" do
-      it "returns a success response" do
-        post :create, params: { task: invalid_attributes }
-        expect(response).to be_successful
-      end
+        it "returns a success response" do
+            post :create, params: { task: invalid_attributes }
+            expect(response).to be_successful
+        end
     end
   end
 

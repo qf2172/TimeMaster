@@ -8,12 +8,15 @@ end
 
 RSpec.describe Task, type: :model do
     describe 'validations' do
-      let(:task1) { FactoryBot.create(:task, name: 'Task 1', description: 'Description 1') }
-      let(:task2) { FactoryBot.build(:task, name: nil, description: 'Description 2') } 
-      let(:task3) { FactoryBot.build(:task, name: 'Task 3', description: nil) } 
-  
+      let(:task1) { FactoryBot.create(:task, name: 'Task 1', description: 'Description 1', due_date: Date.tomorrow, difficulty: 'low', estimate: 10) }
+      let(:task2) { FactoryBot.build(:task, name: nil, description: 'Description 2', due_date: Date.tomorrow, difficulty: 'low', estimate: 10) } 
+      let(:task3) { FactoryBot.build(:task, name: 'Task 3', description: nil, due_date: Date.tomorrow, difficulty: 'low', estimate: 5) } 
+      let(:task4) { FactoryBot.create(:task, name: 'Task 4', description: 'Description 4', due_date: Date.tomorrow, difficulty: 'low', estimate: 13) }
+
+
       it 'is valid with valid attributes' do
         expect(task1).to be_valid
+        expect(task4).to be_valid
       end
   
       it 'is not valid without a name' do

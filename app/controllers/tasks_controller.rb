@@ -1,8 +1,15 @@
 class TasksController < ApplicationController
   # Get all tasks
   def index
-    @task = Task.all
+    sort_column = params[:sort] || 'name'
+    sort_direction = params[:direction] || 'asc'
+
+    sort_column = 'name' unless Task.column_names.include?(sort_column)
+    sort_direction = 'asc' unless %w[asc desc].include?(sort_direction)
+
+    @tasks = Task.all.order(sort_column + ' ' + sort_direction)
   end
+
 
   # Show form for a new task
   def new
@@ -12,8 +19,8 @@ class TasksController < ApplicationController
   # Create a new task
   def create
     @task = Task.new(task_params)
-    if @task.save
-      redirect_to tasks_path, notice: 'Task was successfully created.'
+    if @task.save      
+        redirect_to tasks_path, notice: 'Task was successfully created.'
     # else
     #   render :new
     end
@@ -32,8 +39,9 @@ class TasksController < ApplicationController
 
   # Update a task
   def update
-    @task = Task.find(params[:id])
+       @task = Task.find(params[:id])
     if @task.update(task_params)
+      # @task.calculate_start_time(5)
       redirect_to tasks_path, notice: 'Task was successfully updated.'
     # else
     #   render :edit
@@ -56,6 +64,7 @@ class TasksController < ApplicationController
   private
   # Define strong parameters for the Task model
   def task_params
-    params.require(:task).permit(:name, :description, :due_date)
+    params.require(:task).permit(:name, :description, :due_date, :difficulty, :estimate)
   end
+  
 end

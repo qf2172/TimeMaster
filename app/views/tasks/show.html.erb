@@ -15,5 +15,20 @@
   <%= @task.due_date %>
 </p>
 
+<p>
+  <strong>Priority:</strong>
+  <%= @task.difficulty %>
+</p>
+
+<p>
+  <strong>Estimated Time Range(Hours):</strong>
+  <%= @task.estimate %>
+</p>
+
+<p>
+  <strong>Suggested Start Time(Hours):</strong>
+  <%= @task.start_time %>
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

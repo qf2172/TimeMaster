@@ -1,31 +1,39 @@
-<h1>Tasks List</h1>
-
-<%= link_to 'New Task', new_task_path %>
+<h1 style="background-color: #F9FBFF; color: gray; font-style: italic; text-align: center;">Incoming Tasks...</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Due Date</th>
+      <th><%= link_to 'Due Date', tasks_path(sort: 'due_date', direction: params[:direction] == 'asc' ? 'desc' : 'asc') %></th>
+      <th>Priority</th>
+      <th><%= link_to 'Suggested Start Date', tasks_path(sort: 'start_time', direction: params[:direction] == 'asc' ? 'desc' : 'asc') %></th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @task.each do |task| %>
+    <% @tasks.each do |task| %>
       <tr>
         <td><%= task.name %></td>
         <td><%= task.description %></td>
         <td><%= task.due_date %></td>
+        <td><%= task.difficulty %></td>
+        <td>
+          <% if task.unschedulable? %>
+            ????-??-??
+          <% else %>
+             <%= task.start_time %>
+          <% end %>
+        </td>
         <td>
           <%= link_to 'Show', task_path(task) %> |
           <%= link_to 'Edit', edit_task_path(task) %> |
           <%= link_to 'Delete', manual_delete_task_path(task) %>
-
-
-          
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class='centered'>
+  <%= link_to 'New Task', new_task_path, class: 'button'  %>
+</div>

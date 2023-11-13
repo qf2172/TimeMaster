@@ -26,6 +26,17 @@
     <%= f.date_select :due_date %>
   </div>
 
+  <div class="field">
+  <%= f.label :difficulty, "Priority" %><br>
+  <%= f.select :difficulty, Task.difficulties.keys.map { |difficulty| [difficulty.humanize, difficulty] }, {}, { class: 'select-class' } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estimate, 'Estimated time range' %>
+    <%= f.number_field :estimate, in: 0..100 %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
