@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_08_001457) do
+ActiveRecord::Schema.define(version: 2023_11_15_161820) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.date "due_date"
     t.string "description"
     t.integer "difficulty"
-    t.integer "estimate"
+    t.integer "estimate", default: 0
     t.integer "duration"
     t.date "start_time"
   end

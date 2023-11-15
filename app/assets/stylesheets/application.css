@@ -13,6 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+#error_explanation {
+  color: #a94442;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  margin-top: 0;
+}
+
+#error_explanation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#error_explanation ul li {
+  margin-bottom: 5px;
+}
+
+
 table {
   width: 100%; /* to make sure the table spans the full width of its container */
   margin-left: auto;

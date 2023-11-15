@@ -1,9 +1,10 @@
 class Task < ApplicationRecord
     attr_accessor :unschedulable
-    validates :name, presence: true
-    validates :description, presence: true
+    validates :name, presence: { message: "can't be blank" }
+    validates :description, presence: { message: "can't be blank" }
     enum difficulty: { low: 1, medium: 2, high: 3, urgent: 4 }
-    validates :estimate, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: false
+    validates :estimate, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 200 }, presence: true
+
 
     # Callback to set duration before validation (so it is set when the task is created or updated)
     before_validation :set_duration

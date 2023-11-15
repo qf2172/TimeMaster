@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :due_date %><br>
-    <%= f.date_select :due_date %>
+    <%= f.date_field :due_date, min: Date.today.to_s %>
   </div>
 
   <div class="field">
@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= f.label :estimate, 'Estimated time range' %>
-    <%= f.number_field :estimate, in: 0..100 %>
+    <%= f.number_field :estimate, value: @task.estimate || 0, required: true, min: 0, class: 'form-control' %>
   </div>
 
 

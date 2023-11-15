@@ -66,3 +66,37 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
     expect(page.body.index(e1)).to be < page.body.index(e2)
 end
 
+
+
+Given('I am on the new task page') do
+    visit new_task_path
+  end
+  
+  When('I submit invalid task information') do
+    fill_in 'Name', with: '' 
+    click_button 'Create Task'
+  end
+  
+  Then('I should see an error message {string}') do |arg1|
+    expect(page).to have_content(arg1 + " can't be blank")
+  end
+  
+  And('I should be on the new task page again') do
+    expect(current_path).to eq tasks_path
+  end
+
+
+  Given('I am on the edit task page for task with id {string}') do |id|
+    visit edit_task_path(id)
+  end
+  
+  When('I submit invalid information for the task') do
+    fill_in 'Description', with: ''
+    click_button 'Update Task'
+  end
+  
+  
+  And('I should be on the edit task page for task with id {string}') do |id|
+    expect(current_path).to eq "/tasks/1"
+  end
+  

@@ -21,8 +21,9 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     if @task.save      
         redirect_to tasks_path, notice: 'Task was successfully created.'
-    # else
-    #   render :new
+    else
+      flash.now[:alert] = @task.errors.full_messages.to_sentence
+      render :new
     end
   end
 
@@ -43,8 +44,9 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       # @task.calculate_start_time(5)
       redirect_to tasks_path, notice: 'Task was successfully updated.'
-    # else
-    #   render :edit
+    else
+      flash.now[:alert] = @task.errors.full_messages.to_sentence
+      render :edit
     end
   end
 

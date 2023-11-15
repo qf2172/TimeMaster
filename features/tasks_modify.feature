@@ -35,3 +35,16 @@ Background:
     When I click the "Due Date" 
     Then I should see "hw1" before "hw3"
     Then I should see "hw3" before "hw2"
+
+  Scenario:Create validation error
+    Given I am on the new task page
+    When I submit invalid task information
+    Then I should see an error message "Name"
+    And I should be on the new task page again
+
+  Scenario:Update validation error
+    Given I am on the edit task page for task with id "1"
+    When I submit invalid information for the task
+    Then I should see an error message "Description"
+    And I should be on the edit task page for task with id "1"
+  
