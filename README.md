@@ -44,6 +44,6 @@ The directory structure of our time master application:
 
   3. Use "rails server -b 0.0.0.0" to run the server
 
-  4. Heroku deployment link: https://murmuring-ocean-35352-d3a360880aa0.herokuapp.com/tasks
+  4. Heroku deployment link: https://salty-temple-34387-98e58739970d.herokuapp.com/
   
   5. Github link: https://github.com/JZ2001/COMS4152_TimeMaster
