@@ -1,34 +1,76 @@
-<h1>Task Details</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-<p>
-  <strong>Name:</strong>
-  <%= @task.name %>
-</p>
+    h1 {
+      color: lightblue;
+    }
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
+    p {
+      margin-bottom: 10px;
+    }
 
-<p>
-  <strong>Due Date:</strong>
-  <%= @task.due_date %>
-</p>
+    .button {
+      background-color: #008CBA;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Explore Your Task Details...</h1>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @task.difficulty %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @task.name %>
+  </p>
 
-<p>
-  <strong>Estimated Time Range(Hours):</strong>
-  <%= @task.estimate %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @task.description %>
+  </p>
 
-<p>
-  <strong>Suggested Start Time(Hours):</strong>
-  <%= @task.start_time %>
-</p>
+  <p>
+    <strong>Due Date:</strong>
+    <%= @task.due_date %>
+  </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+  <p>
+    <strong>Priority:</strong>
+    <%= @task.difficulty %>
+  </p>
+
+  <p>
+    <strong>Estimated Time Range(Hours):</strong>
+    <%= @task.estimate %>
+  </p>
+
+  <p>
+    <strong>Suggested Start Date:</strong>
+    <%= @task.start_time %>
+  </p>
+
+  <div>
+    <%= link_to 'Edit', edit_task_path(@task), class: 'button' %> |
+    <%= link_to 'Back', tasks_path, class: 'button' %>
+  </div>
+</body>
+</html>

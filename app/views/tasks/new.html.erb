@@ -14,33 +14,35 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
 
   <div class="field">
-    <%= f.label :due_date, "Due date" %><br>
+    <%= f.label :due_date, "Due date" %>
     <%= f.date_field :due_date, min: Date.today.to_s %>
   </div>
 
   <div class="field">
-    <%= f.label :difficulty, "Priority" %><br>
-    <%= f.select :difficulty, Task.difficulties.keys.map { |difficulty| [difficulty.humanize, difficulty] }, {}, { class: 'select-class' } %>  </div>
-
-  <div class="field">
-    <%= f.label :estimate, "Estimate time range(in hours)" %><br>
-    <%= f.number_field :estimate, value: @task.estimate || 0, required: true, min: 0, class: 'form-control' %>
+    <%= f.label :difficulty, "Priority" %>
+    <%= f.select :difficulty, Task.difficulties.keys.map { |difficulty| [difficulty.humanize, difficulty] }, {}, { class: 'select-class' } %>  
   </div>
 
+  <div class="field">
+    <%= f.label :estimate, "Estimate time range(in hours)" %>
+    <%= f.number_field :estimate, value: @task.estimate || 0, required: true, min: 0, class: 'form-control' %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
-<%= link_to 'Back', tasks_path %>
+<div class="back-link">
+  <%= link_to 'Back', tasks_path, class: 'button' %>
+</div>

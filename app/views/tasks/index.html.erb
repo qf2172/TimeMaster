@@ -1,39 +1,46 @@
-<h1 style="background-color: #F9FBFF; color: gray; font-style: italic; text-align: center;">Incoming Tasks...</h1>
+<h1>Incoming Tasks...</h1>
+
+<body>
+    <div>
+        <p class="centered">Try to click "Due Date" or "Sugessted Start Date" to quickly sort your tasks...</p>
+    </div>
+</body>    
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th><%= link_to 'Due Date', tasks_path(sort: 'due_date', direction: params[:direction] == 'asc' ? 'desc' : 'asc') %></th>
-      <th>Priority</th>
-      <th><%= link_to 'Suggested Start Date', tasks_path(sort: 'start_time', direction: params[:direction] == 'asc' ? 'desc' : 'asc') %></th>
-      <th>Actions</th>
+      <th class="centered">Name</th>
+      <th class="centered">
+        <%= link_to 'Due Date', tasks_path(sort: 'due_date', direction: params[:direction] == 'asc' ? 'desc' : 'asc'), style: 'color: white;' %>
+      </th>
+      <th class="centered">
+        <%= link_to 'Suggested Start Date', tasks_path(sort: 'start_time', direction: params[:direction] == 'asc' ? 'desc' : 'asc'), style: 'color: white;' %>
+      </th>
+      <th class="centered">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.name %></td>
-        <td><%= task.description %></td>
-        <td><%= task.due_date %></td>
-        <td><%= task.difficulty %></td>
-        <td>
+        <td class="centered"><%= task.name %></td>
+        <td class="centered"><%= task.due_date %></td>
+        <td class="centered">
           <% if task.unschedulable? %>
             ????-??-??
           <% else %>
              <%= task.start_time %>
           <% end %>
         </td>
-        <td>
-          <%= link_to 'Show', task_path(task) %> |
-          <%= link_to 'Edit', edit_task_path(task) %> |
-          <%= link_to 'Delete', manual_delete_task_path(task) %>
+        <td class="centered">
+          <%= link_to 'Show', task_path(task), class: 'button' %> |
+          <%= link_to 'Edit', edit_task_path(task), class: 'button' %> |
+          <%= link_to 'Delete', manual_delete_task_path(task), class: 'button' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
 <div class='centered'>
-  <%= link_to 'New Task', new_task_path, class: 'button'  %>
+  <%= link_to 'New Task', new_task_path, class: 'button' %>
 </div>

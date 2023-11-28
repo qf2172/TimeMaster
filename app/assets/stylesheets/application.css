@@ -37,6 +37,48 @@
   margin-bottom: 5px;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    padding: 20px;
+    background-color: #F9FBFF;
+}
+h1 {
+    color: #333;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    animation: 2s infinite alternate ease-in-out pulse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #ADD8E6; /* Light blue color */
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.button {
+    background-color: #58b9e2; /* Light blue color */
+    color: white;
+    padding: 10px 20px 10px 20px; 
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.button:hover {
+    background-color: #8fbed6; /* Slightly darker shade for hover */
+}
+.centered {
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 table {
   width: 100%; /* to make sure the table spans the full width of its container */
@@ -44,27 +86,59 @@ table {
   margin-right: auto; /* these two properties will center the table */
 }
 
-th, td {
-  text-align: center; /* this will center the text in table headers and cells */
+p {
+    font-size: 16px; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Improved line spacing */
+    color: #333; /* Dark color for text */
 }
-.centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+strong {
+    color: #af4c4c; /* Color for labels */
+    font-weight: normal; /* Normal weight for a cleaner look */
 }
-.button {
-  display: inline-block;
-  padding: 10px 20px; /* 调整按钮的内边距 */
-  margin: 20px 0 0 20px; /* 上、右、下、左外边距 */
-  background-color: #3498db; /* 按钮背景颜色 */
-  color: #fff; /* 文本颜色 */
-  text-decoration: none; /* 去掉下划线 */
-  border: 1px solid #3498db; /* 按钮边框 */
-  border-radius: 5px; /* 圆角边框 */
-  transition: background-color 0.3s ease; /* 添加过渡效果 */
 
-  /* 鼠标悬停时的样式 */
-  &:hover {
-    background-color: #2980b9; /* 鼠标悬停时的背景颜色 */
-  }
+@keyframes pulse {
+0%, 100% {
+    transform: scale(1); /* 原始大小 */
+    color: #7fcbe2; /* 初始颜色 */
+}
+50% {
+    transform: scale(1.1); /* 放大到 110% 的大小 */
+    color: #7fcbe2; /* 变化颜色，让动画更有艺术感 */
+}
+    }
+
+.field, .actions {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"], input[type="date"], input[type="number"], textarea, .select-class {
+    width: 100%;
+    padding: 8px;
+    /* margin: 5px 0 20px 0; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    width: 100%;
+    background-color: #7fcbe2;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #7fcbe2;
+}
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
 }
